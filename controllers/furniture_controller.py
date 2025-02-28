@@ -3,7 +3,6 @@ from fastapi import APIRouter, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from services.furniture_service import get_all, get_one, create, update, delete
 from motor.motor_asyncio import AsyncIOMotorClient
-import traceback  
 
 import os
 

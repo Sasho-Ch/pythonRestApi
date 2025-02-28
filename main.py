@@ -27,15 +27,11 @@ app.add_middleware(
 
 app.middleware("http")(auth_middleware)
 
-MONGO_URI = os.getenv("MONGO_URI") or "mongodb://localhost:27017/furniture"
+MONGO_URI = os.getenv("MONGO_URI")
 client = AsyncIOMotorClient(MONGO_URI)
 db = client.get_database()
 
 JWT_SECRET = os.getenv("JWT_SECRET")
-
-@app.get("/")
-async def root():
-    return {"message": "Welcome to the FastAPI Backend!"}
 
 app.include_router(api_router)
 app.add_exception_handler(Exception, exception_handler)

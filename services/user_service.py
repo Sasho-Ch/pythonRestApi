@@ -21,7 +21,6 @@ async def register(user_data: dict):
 
     user_data["password"] = hash_password(user_data["password"])
     user_data["furnitures"] = [] 
-    user_data["__v"] = 0 
 
     new_user = await db_client.users.insert_one(user_data)
     created_user = await db_client.users.find_one({"_id": new_user.inserted_id}, {"repassword": 0})

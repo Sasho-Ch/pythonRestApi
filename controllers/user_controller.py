@@ -1,6 +1,5 @@
-import traceback
 from bson import ObjectId
-from fastapi import APIRouter, HTTPException, Depends, Request
+from fastapi import APIRouter, HTTPException, Request
 from services.user_service import register, login, get_profile, get_one, edit_profile
 from fastapi.responses import JSONResponse
 

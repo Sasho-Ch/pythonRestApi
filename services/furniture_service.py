@@ -4,7 +4,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 import os
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/furniture")
+MONGO_URI = os.getenv("MONGO_URI")
 client = AsyncIOMotorClient(MONGO_URI)
 db = client.get_database("furniture")  
 db_client = client.get_database()  
